@@ -163,7 +163,7 @@ class Api(object):
 
     def secure_headers(self, url, post_data):
         """ Creates secure header for cryptopia private api. """
-        nonce = str(int(time.time()))
+        nonce = str(time.time() )
         md5 = hashlib.md5()
         jsonparams = post_data.encode('utf-8')
         md5.update(jsonparams)
