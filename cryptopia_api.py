@@ -36,6 +36,7 @@ class Api(object):
                     req.raise_for_status()
                 except requests.exceptions.RequestException as ex:
                     return None, "Status Code : " + str(ex)
+            req.encoding = "utf-8-sig"
             req = req.json()
             if 'Success' in req and req['Success'] is True:
                 result = req['Data']
